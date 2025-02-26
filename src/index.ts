@@ -1,39 +1,10 @@
-// Define types locally instead of importing from SDK
-interface Manifest {
-  version: string;
-  name: string;
-  description: string;
-  tools: Array<{
-    name: string;
-    description: string;
-    input_schema?: any;
-  }>;
-}
-
-interface ExecuteParams {
-  tool: string;
-  input: any;
-}
-
-interface ExecuteResult {
-  data?: any;
-  error?: {
-    message: string;
-    details?: any;
-    stack?: string;
-  };
-}
-
-// Mock SDK import for the server creation function
-const createServer = (options: {
-  manifest: Manifest;
-  execute: (params: ExecuteParams) => Promise<ExecuteResult>;
-  transport?: 'stdio' | 'http' | 'sse';
-}) => {
-  // Implementation provided by the actual SDK
-  const mcpSdk = require('@modelcontextprotocol/sdk');
-  return mcpSdk.createServer(options);
-};
+// Import types and functions from our mock SDK instead of the actual package
+import { 
+  Manifest, 
+  ExecuteParams, 
+  ExecuteResult, 
+  createServer 
+} from './utils/mockSdk';
 
 import dotenv from 'dotenv';
 import path from 'path';

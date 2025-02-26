@@ -5,7 +5,7 @@
  * making it easier to version control, understand, and edit workflows programmatically.
  */
 
-import { MCP, MCPRequest, MCPResponse } from '@modelcontextprotocol/sdk';
+import { MCPRequest, MCPResponse, MCP } from '../../utils/mockSdk';
 import { N8nWorkflow, N8nNode } from '../../types/n8n';
 
 /**

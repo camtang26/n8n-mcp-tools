@@ -1,4 +1,4 @@
-import { ExecuteResult } from '@modelcontextprotocol/sdk';
+import { ExecuteResult } from '../../utils/mockSdk';
 import { n8nApi } from '../../api/n8nApi';
 
 interface RunWorkflowInput {
@@ -40,7 +40,7 @@ export async function runWorkflow(input: any): Promise<ExecuteResult> {
       return {
         error: {
           message: 'Workflow execution failed',
-          execution: {
+          details: {
             id: execution.id,
             status: execution.status,
             startedAt: execution.startedAt,

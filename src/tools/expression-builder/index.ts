@@ -5,7 +5,7 @@
  * for accessing and manipulating data within workflows.
  */
 
-import { MCP, MCPRequest, MCPResponse } from '@modelcontextprotocol/sdk';
+import { MCPRequest, MCPResponse, MCP } from '../../utils/mockSdk';
 import { expressionTemplates, ExpressionTemplate, ExpressionCategory } from './expressionTemplates';
 
 /**

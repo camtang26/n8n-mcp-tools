@@ -5,7 +5,7 @@
  * deployment, and common infrastructure tasks.
  */
 
-import { MCP, MCPRequest, MCPResponse } from '@modelcontextprotocol/sdk';
+import { MCPRequest, MCPResponse, MCP } from '../../utils/mockSdk';
 import { n8nApi } from '../../api/n8nApi';
 import * as fs from 'fs';
 import * as path from 'path';

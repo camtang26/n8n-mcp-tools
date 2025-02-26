@@ -1,4 +1,4 @@
-import { ExecuteResult } from '@modelcontextprotocol/sdk';
+import { ExecuteResult } from '../../utils/mockSdk';
 
 interface GenerateNodeInput {
   node_type: string;

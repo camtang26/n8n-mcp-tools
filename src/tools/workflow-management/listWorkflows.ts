@@ -1,4 +1,4 @@
-import { ExecuteResult } from '@modelcontextprotocol/sdk';
+import { ExecuteResult } from '../../utils/mockSdk';
 import { n8nApi, N8nWorkflow } from '../../api/n8nApi';
 
 interface ListWorkflowsInput {

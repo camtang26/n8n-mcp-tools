@@ -76,6 +76,20 @@ declare module '@modelcontextprotocol/sdk' {
   }
 
   /**
+   * Schema function types
+   */
+  export namespace MCP {
+    export const schema: {
+      object: (options: any) => any;
+      string: (options?: any) => any;
+      number: (options?: any) => any;
+      boolean: (options?: any) => any;
+      array: (options?: any) => any;
+      optional: (schema: any) => any;
+    };
+  }
+
+  /**
    * Options for creating an MCP server
    */
   export interface CreateServerOptions {

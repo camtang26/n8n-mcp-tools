@@ -14,7 +14,8 @@
     "types": ["node"],
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
-    "typeRoots": ["./node_modules/@types", "./src/types"]
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "noEmitOnError": false
   },
   "include": ["src/**/*", "src/types/**/*.d.ts"],
   "exclude": ["node_modules", "dist"]

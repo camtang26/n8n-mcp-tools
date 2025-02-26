@@ -1,4 +1,4 @@
-import { ExecuteResult } from '@modelcontextprotocol/sdk';
+import { ExecuteResult } from '../../utils/mockSdk';
 import { n8nApi } from '../../api/n8nApi';
 
 interface ListTemplatesInput {

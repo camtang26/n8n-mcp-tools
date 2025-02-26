@@ -5,7 +5,7 @@
  * determine root causes, and suggest fixes.
  */
 
-import { ExecuteParams, ExecuteResult } from '@modelcontextprotocol/sdk';
+import { ExecuteParams, ExecuteResult } from '../../utils/mockSdk';
 import { n8nApi } from '../../api/n8nApi';
 import { N8nExecution, N8nWorkflow, N8nNode, N8nError } from '../../schemas/n8nSchemas';
 import { errorPatterns, ErrorPattern, ErrorFix } from './errorPatterns';
@@ -108,7 +108,10 @@ async function parseErrorLogs(input: DebuggerInput): Promise<N8nError> {
       // If we still don't have an error message, check the last failed node
       if (!error.message && execution.data?.resultData?.runData) {
         for (const [nodeName, nodeData] of Object.entries(execution.data.resultData.runData)) {
-          const lastRun = nodeData[nodeData.length - 1];
+          // Type assertion to handle the unknown type
+          const typedNodeData = nodeData as { error?: { message: string }; }[];
+          const lastRun = typedNodeData[typedNodeData.length - 1];
+          
           if (lastRun?.error) {
             error.message = lastRun.error.message || 'Execution failed';
             error.nodeName = nodeName;
